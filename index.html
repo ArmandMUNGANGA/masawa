@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MASAWA RESTAURANTE - Bukavu</title>
+<style>
+*{box-sizing:border-box} body{font-family:Arial,sans-serif;margin:0;background:#FFF8F0;color:#222;padding-bottom:110px}
+header{background:#B71C1C;color:white;padding:25px 15px;text-align:center}
+header h1{margin:0;font-size:32px;letter-spacing:1px}
+header p{margin:6px 0;font-size:14px}
+.btn-w{background:#25D366;color:white;padding:13px 20px;border-radius:30px;text-decoration:none;display:inline-block;font-weight:bold;margin-top:10px}
+.hero{padding:15px;text-align:center}
+.hero img{width:100%;border-radius:15px;height:220px;object-fit:cover}
+.menu{padding:0 15px}
+.cat{font-size:21px;color:#B71C1C;margin:28px 0 5px;border-bottom:2px solid #B71C1C;padding-bottom:5px;font-weight:bold}
+.plat{background:white;border-radius:14px;padding:10px;margin:12px 0;display:flex;gap:12px;box-shadow:0 2px 8px #00000015;align-items:center}
+.plat img{width:95px;height:95px;object-fit:cover;border-radius:10px}
+.plat .info{flex:1}
+.plat b{font-size:16px}
+.plat span{font-size:13px;color:#666;display:block;margin:3px 0}
+.prix{color:#B71C1C;font-weight:bold;font-size:16px}
+.plat button{background:#B71C1C;color:white;border:none;padding:8px 12px;border-radius:20px;font-weight:bold}
+.resa{background:white;padding:18px;margin:20px 15px;border-radius:14px}
+.resa h2{margin-top:0;color:#B71C1C}
+input,select{width:100%;padding:11px;margin:6px 0;border:1px solid #ddd;border-radius:9px;font-size:15px}
+.resa button{background:#25D366;color:white;border:none;width:100%;padding:13px;border-radius:10px;font-weight:bold;font-size:16px}
+footer{background:#222;color:white;padding:20px;text-align:center;font-size:14px}
+footer a{color:#25D366;text-decoration:none}
+#panier{position:fixed;bottom:0;left:0;right:0;background:white;padding:12px 15px;box-shadow:0 -3px 12px #00000020;text-align:center}
+#panier button{background:#25D366;color:white;border:none;width:100%;padding:12px;border-radius:10px;font-weight:bold;font-size:16px;margin-top:6px}
+</style>
+</head>
+<body>
+
+<header>
+<h1>MASAWA RESTAURANTE</h1>
+<p>📍 Bugabo, Avenue Principale N°36, Bukavu - RDC</p>
+<p>Ouvert 7j/7 : 09h00 - 23h00 | Livraison : Bugabo, Ibanda, Kadutu, Bagira</p>
+<p>📞 +243 975 417 780 | ✉️ armandmunganga7@gmail.com</p>
+<a class="btn-w" href="https://wa.me/243975417780?text=Bonjour%20MASAWA%2C%20je%20veux%20commander">📲 Commander sur WhatsApp</a>
+</header>
+
+<div class="hero">
+<img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=900&q=80" alt="MASAWA">
+<h2>🍽️ Les Plats Célèbres de Bukavu & du Congo</h2>
+<p>Commandez en 1 clic, on vous livre chaud à Bukavu</p>
+</div>
+
+<div class="menu">
+<div class="cat">🔥 Grillades & Poulets</div>
+
+<div class="plat">
+<img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400&q=80">
+<div class="info"><b>Poulet Mayo + Frites</b><span>Le préféré de Bukavu - poulet grillé, mayo maison</span><div class="prix">25.000 CDF</div></div>
+<button onclick="ajouter('Poulet Mayo + Frites',25000)">Ajouter +</button>
+</div>
+
+<div class="plat">
+<img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=80">
+<div class="info"><b>Brochettes de Bœuf (4 pcs)</b><span>+ Frites / Banane plantain</span><div class="prix">20.000 CDF</div></div>
+<button onclick="ajouter('Brochettes Boeuf',20000)">Ajouter +</button>
+</div>
+
+<div class="plat">
+<img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=400&q=80">
+<div class="info"><b>Poulet Bicyclette Grillé</b><span>Grillé au feu de bois</span><div class="prix">30.000 CDF</div></div>
+<button onclick="ajouter('Poulet Bicyclette',30000)">Ajouter +</button>
+</div>
+
+<div class="cat">🐟 Poissons du Lac Kivu</div>
+
+<div class="plat">
+<img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400&q=80">
+<div class="info"><b>Tilapia Grillé Entier</b><span>+ Frites, oignons, citron</span><div class="prix">35.000 CDF</div></div>
+<button onclick="ajouter('Tilapia Grille',35000)">Ajouter +</button>
+</div>
+
+<div class="plat">
+<img src="https://images.unsplash.com/photo-1535399831218-d5bd36d1a6b3?w=400&q=80">
+<div class="info"><b>Capitaine Grillé</b><span>Spécialité du Lac Kivu</span><div class="prix">40.000 CDF</div></div>
+<button onclick="ajouter('Capitaine Grille',40000)">Ajouter +</button>
+</div>
+
+<div class="plat">
+<img src="https://images.unsplash.com/photo-1611599537845-1c7aca0091c0?w=400&q=80">
+<div class="info"><b>Ndakala Frit</b><span>Petits poissons du Lac Kivu</span><div class="prix">18.000 CDF</div></div>
+<button onclick="ajouter('Ndakala Frit',18000)">Ajouter +</button>
+</div>
+
+<div class="cat">🍲 Plats Congolais</div>
+
+<div class="plat">
+<img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&q=80">
+<div class="info"><b>Saka-Saka (Pondu) + Riz</b><span>+ Viande / Poisson</span><div class="prix">22.000 CDF</div></div>
+<button onclick="ajouter('Saka-Saka',22000)">Ajouter +</button>
+</div>
+
+<div class="plat">
+<img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=400&q=80">
+<div class="info"><b>Fumbwa + Riz</b><span>Feuilles traditionnelles</span><div class="prix">20.000 CDF</div></div>
+<button onclick="ajouter('Fumbwa',20000)">Ajouter +</button>
+</div>
+
+<div class="plat">
+<img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&q=80">
+<div class="info"><b>Madesu (Haricots) + Riz</b><span>Plat populaire de Bukavu</span><div class="prix">15.000 CDF</div></div>
+<button onclick="ajouter('Madesu',15000)">Ajouter +</button>
+</div>
+
+<div class="plat">
+<img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&q=80">
+<div class="info"><b>Pilao Poulet</b><span>Riz pilao épicé</span><div class="prix">18.000 CDF</div></div>
+<button onclick="ajouter('Pilao Poulet',18000)">Ajouter +</button>
+</div>
+
+<div class="cat">🥤 Boissons</div>
+
+<div class="plat">
+<img src="https://images.unsplash.com/photo-1554866585-cd94860890b7?w=400&q=80">
+<div class="info"><b>Fanta / Coca / Sprite 50cl</b><span>Bien froid</span><div class="prix">5.000 CDF</div></div>
+<button onclick="ajouter('Boisson 50cl',5000)">Ajouter +</button>
+</div>
+
+<div class="plat">
+<img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=400&q=80">
+<div class="info"><b>Jus d'Avocat / Maracuja</b><span>Jus naturel</span><div class="prix">10.000 CDF</div></div>
+<button onclick="ajouter('Jus Naturel',10000)">Ajouter +</button>
+</div>
+
+<div class="plat">
+<img src="https://images.unsplash.com/photo-1600788886242-5c96aabe3757?w=400&q=80">
+<div class="info"><b>Primus / Mützig</b><span>Bière froide</span><div class="prix">8.000 CDF</div></div>
+<button onclick="ajouter('Primus',8000)">Ajouter +</button>
+</div>
+</div>
+
+<div class="resa">
+<h2>📅 Réserver une Table - Bugabo N°36</h2>
+<input type="text" id="nom" placeholder="Votre nom">
+<input type="date" id="date">
+<select id="heure"><option>12h00</option><option>13h00</option><option>18h00</option><option>19h00</option><option>20h00</option></select>
+<select id="pers"><option>2 Personnes</option><option>4 Personnes</option><option>6 Personnes</option><option>Famille / Groupe</option></select>
+<button onclick="reserver()">Réserver sur WhatsApp</button>
+</div>
+
+<footer>
+<b>MASAWA RESTAURANTE</b><br>
+Bugabo, Avenue Principale N°36, Bukavu - RDC<br>
+📞 WhatsApp : +243 975 417 780<br>
+✉️ Email : armandmunganga7@gmail.com<br>
+Ouvert 7j/7 - 09h00 à 23h00<br><br>
+© 2026 MASAWA RESTAURANTE - Créé par Armand Munganga
+</footer>
+
+<div id="panier">
+<b id="total">Panier : 0 CDF</b>
+<button onclick="commander()">🛒 Commander sur WhatsApp</button>
+</div>
+
+<script>
+let panier=[]; let total=0;
+function ajouter(nom,prix){panier.push(nom); total+=prix; document.getElementById('total').innerText='Panier : '+total.toLocaleString()+' CDF - '+panier.length+' article(s)'}
+function commander(){
+if(panier.length==0){alert('Choisissez un plat d\'abord');return}
+let msg='Bonjour MASAWA RESTAURANTE, je veux commander:%0A - '+panier.join('%0A - ')+'%0A Total: '+total+' CDF %0A Livraison à : ';
+window.open('https://wa.me/243975417780?text='+msg)
+}
+function reserver(){
+let n=document.getElementById('nom').value, d=document.getElementById('date').value, h=document.getElementById('heure').value, p=document.getElementById('pers').value;
+let msg='Bonjour MASAWA, je veux réserver une table:%0A Nom: '+n+'%0A Date: '+d+'%0A Heure: '+h+'%0A '+p+'%0A Adresse: Bugabo N°36';
+window.open('https://wa.me/243975417780?text='+msg)
+}
+</script>
+</body>
+</html>
